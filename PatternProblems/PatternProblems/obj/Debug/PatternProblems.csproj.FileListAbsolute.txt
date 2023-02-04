@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\Projects\PatternPrograms\PatternProblems\PatternProblems\bin\Debug\PatternProblems.exe.config
+C:\Users\User\Desktop\Projects\PatternPrograms\PatternProblems\PatternProblems\bin\Debug\PatternProblems.exe
+C:\Users\User\Desktop\Projects\PatternPrograms\PatternProblems\PatternProblems\bin\Debug\PatternProblems.pdb
+C:\Users\User\Desktop\Projects\PatternPrograms\PatternProblems\PatternProblems\obj\Debug\PatternProblems.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Projects\PatternPrograms\PatternProblems\PatternProblems\obj\Debug\PatternProblems.exe
+C:\Users\User\Desktop\Projects\PatternPrograms\PatternProblems\PatternProblems\obj\Debug\PatternProblems.pdb
