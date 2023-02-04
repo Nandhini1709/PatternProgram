@@ -94,12 +94,14 @@ namespace PatternProblems
 
                 for (int col = space + 1; col <= n; col++)
                 {
-                    temp += "# ";
+                    temp += "#";
                 }
                 temp += "\n";
             }
 
             return temp;
         }
+
+     
     }
 }
