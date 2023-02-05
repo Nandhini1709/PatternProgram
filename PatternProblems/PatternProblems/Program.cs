@@ -12,11 +12,14 @@ namespace PatternProblems
         {
             Console.WriteLine("Enter N");
             int n = int.Parse(Console.ReadLine());
-            Console.WriteLine(PrintSquareBoardPattern(n));
-            Console.WriteLine(PrintCheckBoardPattern(n));
-            Console.WriteLine(PatternA(n));
-            Console.WriteLine(PatternB(n));
-            Console.WriteLine(PatternC(n));
+            //Console.WriteLine(PrintSquareBoardPattern(n));
+            //Console.WriteLine(PrintCheckBoardPattern(n));
+            //Console.WriteLine(PatternA(n));
+            //Console.WriteLine(PatternB(n));
+            //Console.WriteLine(PatternC(n));
+            //Console.WriteLine(PatternD(n));
+            //Console.WriteLine(SquarePatternE(n));
+            Console.WriteLine(ReverseZPatternF(n));
         }
         public static string PrintSquareBoardPattern(int n)
         {
@@ -89,12 +92,12 @@ namespace PatternProblems
             {
                 for (space = 1; space <= row - 1; space++)
                 {
-                    temp += " ";
+                    temp += "  ";
                 }
 
                 for (int col = space + 1; col <= n; col++)
                 {
-                    temp += "#";
+                    temp += "# ";
                 }
                 temp += "\n";
             }
@@ -102,6 +105,68 @@ namespace PatternProblems
             return temp;
         }
 
-     
+  
+        public static string PatternD(int n)
+        {
+            string temp = "";
+            for (int row = 0; row <= n; row++)
+            {
+                for (int space = 1; space <= n - row; space++)
+                {
+                    temp += "  ";
+                }
+                for (int col = 1; col <= row; col++)
+                {
+                    temp += "# ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+
+        public static string SquarePatternE(int n)
+        {
+            string temp = "";
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= n; col++)
+                {
+ 
+                   if (row == 1 || row == n  || col==1 ||col==n)
+                     {
+                         temp += "# ";
+                     }
+                   else
+                   {
+                       temp+="  ";
+                   }
+                }
+                temp+="\n";
+             }
+                return temp;
+         }
+
+
+        public static string ReverseZPatternF(int n)
+        {
+            string temp = "";
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= n; col++)
+                {
+                    if (row == 1 || row == n || row == col)
+                    {
+                        temp += "# ";
+                    }
+                    else
+                    {
+                        temp += "  ";
+                    }
+                }
+                temp += "\n";
+            }
+            return temp;
+        } 
     }
 }
