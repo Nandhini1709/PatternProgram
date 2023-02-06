@@ -15,11 +15,14 @@ namespace PatternProblems
             //Console.WriteLine(PrintSquareBoardPattern(n));
             //Console.WriteLine(PrintCheckBoardPattern(n));
             //Console.WriteLine(PatternA(n));
-            //Console.WriteLine(PatternB(n));
+           Console.WriteLine(PatternB(n));
             //Console.WriteLine(PatternC(n));
             //Console.WriteLine(PatternD(n));
             //Console.WriteLine(SquarePatternE(n));
-            Console.WriteLine(ReverseZPatternF(n));
+            //Console.WriteLine(ReverseZPatternF(n));
+            //Console.WriteLine(ZPatternG(n));
+            //Console.WriteLine(PatternH(n));
+            Console.WriteLine(PatternB1(n));
         }
         public static string PrintSquareBoardPattern(int n)
         {
@@ -71,8 +74,8 @@ namespace PatternProblems
         public static string PatternB(int n)
         {
             string temp = "";
-           
-             for (int row = 1; row <= n; row++)
+
+            for (int row = 1; row <= n; row++)
             {
                 for (int col = n; col >= row; col--)
                 {
@@ -105,7 +108,7 @@ namespace PatternProblems
             return temp;
         }
 
-  
+
         public static string PatternD(int n)
         {
             string temp = "";
@@ -132,20 +135,20 @@ namespace PatternProblems
             {
                 for (int col = 1; col <= n; col++)
                 {
- 
-                   if (row == 1 || row == n  || col==1 ||col==n)
-                     {
-                         temp += "# ";
-                     }
-                   else
-                   {
-                       temp+="  ";
-                   }
+
+                    if (row == 1 || row == n || col == 1 || col == n)
+                    {
+                        temp += "# ";
+                    }
+                    else
+                    {
+                        temp += "  ";
+                    }
                 }
-                temp+="\n";
-             }
-                return temp;
-         }
+                temp += "\n";
+            }
+            return temp;
+        }
 
 
         public static string ReverseZPatternF(int n)
@@ -167,6 +170,63 @@ namespace PatternProblems
                 temp += "\n";
             }
             return temp;
-        } 
+        }
+
+
+        public static string ZPatternG(int n)
+        {
+            string temp = "";
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= n; col++)
+                {
+                    if (row == 1 || row == n || col+row ==n+1)
+                    {
+                        temp += "# ";
+                    }
+                    else
+                    {
+                        temp += "  ";
+                    }
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string PatternH(int n)
+        {
+            string temp = "";
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= n; col++)
+                {
+                    if (row == 1 || row == n || row == col || row + col == n + 1)
+                    {
+                        temp += "# ";
+                    }
+                    else
+                    {
+                        temp += "  ";
+                    }
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string PatternB1(int n)
+        {
+            string temp = "";
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= (n - row) + 1; col++)
+                {
+                    temp += "# ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
     }
 }
