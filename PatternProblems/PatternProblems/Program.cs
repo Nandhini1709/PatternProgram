@@ -24,7 +24,9 @@ namespace PatternProblems
             //Console.WriteLine(PatternH(n));
             //Console.WriteLine(PatternB1(n));
            //onsole.WriteLine(PatternI(n));
-            Console.WriteLine(AlphaPattern(n));
+            //Console.WriteLine(AlphaPattern(n));
+            //Console.WriteLine(NumberPattern1(n));
+            Console.WriteLine(NumberPattern2(n));
         }
         public static string PrintSquareBoardPattern(int n)
         {
@@ -256,13 +258,12 @@ namespace PatternProblems
         {
             string temp = "";
             int alpha = 96;
-            int asciicode = 0;
             for (int row = 1; row <= n; row++)
             {
                 for (int col = 1; col <= row; col++)
                 {
-                    asciicode = alpha + col;
-                    temp += ((char)asciicode).ToString() + " ";
+                    alpha = alpha + 1;
+                    temp += ((char)alpha).ToString() + " ";
                 }
                 temp += "\n";
             }
@@ -270,6 +271,37 @@ namespace PatternProblems
         }
 
 
+        public static string NumberPattern1(int n)
+        {
+            string temp = "";
+            int alpha = 48;
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= row; col++)
+                {
+                    int ascii = alpha + row;
+                    temp += ((char)ascii).ToString()+" ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string NumberPattern2(int n)
+        {
+            string temp = "";
+            int alpha = 48;
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= row; col++)
+                {
+                    alpha = alpha + 1;
+                    temp += ((char)alpha).ToString() + " ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
         }
 
  
