@@ -15,14 +15,16 @@ namespace PatternProblems
             //Console.WriteLine(PrintSquareBoardPattern(n));
             //Console.WriteLine(PrintCheckBoardPattern(n));
             //Console.WriteLine(PatternA(n));
-           Console.WriteLine(PatternB(n));
+           //Console.WriteLine(PatternB(n));
             //Console.WriteLine(PatternC(n));
             //Console.WriteLine(PatternD(n));
             //Console.WriteLine(SquarePatternE(n));
             //Console.WriteLine(ReverseZPatternF(n));
             //Console.WriteLine(ZPatternG(n));
             //Console.WriteLine(PatternH(n));
-            Console.WriteLine(PatternB1(n));
+            //Console.WriteLine(PatternB1(n));
+           //onsole.WriteLine(PatternI(n));
+            Console.WriteLine(AlphaPattern(n));
         }
         public static string PrintSquareBoardPattern(int n)
         {
@@ -98,7 +100,7 @@ namespace PatternProblems
                     temp += "  ";
                 }
 
-                for (int col = space + 1; col <= n; col++)
+                for (int col = space ; col <= n; col++)
                 {
                     temp += "# ";
                 }
@@ -228,5 +230,48 @@ namespace PatternProblems
             }
             return temp;
         }
+
+        public static string PatternI(int n)
+        { 
+            string temp="";
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= n; col++)
+                {
+                    if (col == 1 || col == n || row == 1 || row == n || row == col || row + col == n + 1)
+                    {
+                        temp += "# ";
+                    }
+                    else
+                    {
+                        temp += "  ";
+                    }
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string AlphaPattern(int n)
+        {
+            string temp = "";
+            int alpha = 96;
+            int asciicode = 0;
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= row; col++)
+                {
+                    asciicode = alpha + col;
+                    temp += ((char)asciicode).ToString() + " ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+
+        }
+
+ 
     }
-}
+
