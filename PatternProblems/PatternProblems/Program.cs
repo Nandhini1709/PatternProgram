@@ -33,7 +33,11 @@ namespace PatternProblems
             //Console.WriteLine(Pattern4(n));
             //Console.WriteLine(Pattern5(n));
             //Console.WriteLine(InvertedPyramid(n));
-            Console.WriteLine(PyramidPattern(n)+InvertedPyramid(n));
+            //Console.WriteLine(PyramidPattern(n)+InvertedPyramid(n));
+            //Console.WriteLine(PatternPyramidC(n));
+            //Console.WriteLine(NoPramidPatternD(n));
+            //Console.WriteLine(NoPramidPatternE(n));
+            Console.WriteLine(NoPramidPatternF(n));
         }
         public static string PrintSquareBoardPattern(int n)
         {
@@ -445,6 +449,87 @@ namespace PatternProblems
                 for (int col = space; col <= n + n - 1 - (n - row); col++)
                 {
                     temp += "# ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string PatternPyramidC(int n)
+        {
+            string temp = "";
+            int space = 0;
+            for (int row = 1; row <= n + n - 1; row++)
+            {
+                int spacelimit = n - row;
+                if (row > n)
+                {
+                    spacelimit = row - n;
+                }
+                for (space = 1; space <= spacelimit; space++)
+                {
+                    temp += "  ";
+                }
+                for (int col = space; col <= n + n - 1 - (spacelimit); col++)
+                {
+                    temp += "# ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string NoPramidPatternD(int n)
+        {
+            string temp = "";
+            int alpha = 48;
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= row; col++)
+                {
+                    int ascii = alpha + col;
+                    temp += ((char)ascii).ToString() + " ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string NoPramidPatternE(int n)
+        {
+            string temp = "";
+            int space = 0;
+            int alpha = 48;
+            for (int row = 1; row <= n; row++)
+            {
+                for (space = 1; space <= row - 1; space++)
+                {
+                    temp += "  ";
+                }
+                for (int col = 1; col <= n - (row - 1); col++)
+                {
+                    int ascii = alpha + col;
+                    temp += ((char)ascii).ToString()+" ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string NoPramidPatternF(int n)
+        {
+            string temp = "";
+            int ascii = 48;
+            for (int row = 1; row <= n; row++)
+            {
+                for (int space = 1; space <= n - row; space++)
+                {
+                    temp += "  ";
+                }
+                for (int col = n - (n - row); col >= 1; col--)
+                { 
+                    int alpha=ascii+col;
+                    temp += ((char)alpha).ToString() + " ";
                 }
                 temp += "\n";
             }
