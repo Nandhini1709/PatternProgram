@@ -15,7 +15,7 @@ namespace PatternProblems
             //Console.WriteLine(PrintSquareBoardPattern(n));
             //Console.WriteLine(PrintCheckBoardPattern(n));
             //Console.WriteLine(PatternA(n));
-           //Console.WriteLine(PatternB(n));
+            //Console.WriteLine(PatternB(n));
             //Console.WriteLine(PatternC(n));
             //Console.WriteLine(PatternD(n));
             //Console.WriteLine(SquarePatternE(n));
@@ -23,10 +23,17 @@ namespace PatternProblems
             //Console.WriteLine(ZPatternG(n));
             //Console.WriteLine(PatternH(n));
             //Console.WriteLine(PatternB1(n));
-           //onsole.WriteLine(PatternI(n));
+            //onsole.WriteLine(PatternI(n));
             //Console.WriteLine(AlphaPattern(n));
             //Console.WriteLine(NumberPattern1(n));
-            Console.WriteLine(NumberPattern2(n));
+            //Console.WriteLine(NumberPattern2(n));
+            //Console.WriteLine(Pattern1(n));
+            //Console.WriteLine(Pattern2(n));
+            //Console.WriteLine(Pattern3(n));
+            //Console.WriteLine(Pattern4(n));
+            //Console.WriteLine(Pattern5(n));
+            //Console.WriteLine(InvertedPyramid(n));
+            Console.WriteLine(PyramidPattern(n)+InvertedPyramid(n));
         }
         public static string PrintSquareBoardPattern(int n)
         {
@@ -102,7 +109,7 @@ namespace PatternProblems
                     temp += "  ";
                 }
 
-                for (int col = space ; col <= n; col++)
+                for (int col = space; col <= n; col++)
                 {
                     temp += "# ";
                 }
@@ -184,7 +191,7 @@ namespace PatternProblems
             {
                 for (int col = 1; col <= n; col++)
                 {
-                    if (row == 1 || row == n || col+row ==n+1)
+                    if (row == 1 || row == n || col + row == n + 1)
                     {
                         temp += "# ";
                     }
@@ -234,8 +241,8 @@ namespace PatternProblems
         }
 
         public static string PatternI(int n)
-        { 
-            string temp="";
+        {
+            string temp = "";
             for (int row = 1; row <= n; row++)
             {
                 for (int col = 1; col <= n; col++)
@@ -280,7 +287,7 @@ namespace PatternProblems
                 for (int col = 1; col <= row; col++)
                 {
                     int ascii = alpha + row;
-                    temp += ((char)ascii).ToString()+" ";
+                    temp += ((char)ascii).ToString() + " ";
                 }
                 temp += "\n";
             }
@@ -302,8 +309,147 @@ namespace PatternProblems
             }
             return temp;
         }
+
+        public static string Pattern1(int n)
+        {
+            string temp = "";
+            for (int row = 1; row <= 2*n-1; row++)
+            {
+                int hash = row;
+                if (row > n)
+                { 
+                    hash=2*n-row;
+                }
+                for (int col = 1; col <= hash; col++)
+                {
+                    temp += "# ";
+                }
+                temp += "\n";
+            }
+            return temp;
         }
 
- 
+        public static string Pattern2(int n)
+        {
+            string temp = "";
+            for (int row = 1; row <= 2 * n - 1; row++)
+            {
+                int one = row;
+                if(row>n)
+                {
+                one=2*n-row;
+                }
+
+                for (int col = 1; col <= one; col++)
+                {
+                    temp += "1 ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string Pattern3(int n)
+        {
+            int alpha = 96;
+            string temp = "";
+            for (int row = 1; row <= 2 * n - 1; row++)
+            {
+                int letters = row;
+                if (row > n)
+                {
+                    letters = 2 * n - row;
+                }
+                for (int col = 1; col <= letters; col++)
+                {
+                    alpha = alpha + 1;
+                    temp += ((char)alpha).ToString() + " ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string Pattern4(int n)
+        {
+            string temp = "";
+            for(int row=1;row<=2*n;row++)
+            {
+                for (int col = 1; col <=n; col++)
+                {
+                    if (row == col || row + col == 2*n + 1)
+                    {
+                        temp += "# ";
+                    }
+                    else
+                    {
+                        temp += "  ";
+                    }
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string Pattern5(int n)
+        {
+            string temp = "";
+            for (int row = 1; row <= 2 * n; row++)
+            {
+                for (int col = 1; col <= n; col++)
+                {
+                    if (row == col || row + col == 2 * n + 1)
+                    {
+                        temp += "1 ";
+                    }
+                    else
+                    {
+                        temp += "  ";
+                    }
+                }
+                temp += "\n";
+                
+            }
+            return temp;
+        }
+
+        public static string InvertedPyramid(int n)
+        {
+            string temp = "";
+            int space = 0;
+            for (int row = 1; row <= n; row++)
+            {
+                for (space = 1; space <= row - 1; space++)
+                {
+                    temp += "  ";
+                }
+                for (int col = space; col <= n + n - 1 - (row - 1); col++)
+                {
+                    temp += "# ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+    
+        public static string PyramidPattern(int n)
+        {
+            string temp = "";
+            int space=0;
+            for (int row = 1; row <= n; row++)
+            {
+                for (space = 1; space <= n - row; space++)
+                {
+                    temp += "  ";
+                }
+                for (int col = space; col <= n + n - 1 - (n - row); col++)
+                {
+                    temp += "# ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+    }
     }
 
