@@ -37,7 +37,10 @@ namespace PatternProblems
             //Console.WriteLine(PatternPyramidC(n));
             //Console.WriteLine(NoPramidPatternD(n));
             //Console.WriteLine(NoPramidPatternE(n));
-            Console.WriteLine(NoPramidPatternF(n));
+            //Console.WriteLine(NoPramidPatternF(n));
+            Console.WriteLine(NoPattern(n));
+            Console.WriteLine(NoPattern1(n));
+            Console.WriteLine(NoPatternG(n));
         }
         public static string PrintSquareBoardPattern(int n)
         {
@@ -530,6 +533,69 @@ namespace PatternProblems
                 { 
                     int alpha=ascii+col;
                     temp += ((char)alpha).ToString() + " ";
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string NoPattern(int n)
+        {
+            string temp = "";
+            int no = 0;
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= row; col++)
+                {
+                    no = no + 1;
+                    temp += no + " ";
+                }
+                temp += "\n";
+
+            }
+            return temp;
+        }
+
+        public static string NoPattern1(int n)
+        {
+            string temp="";
+            int no = 0;
+
+            for (int row = 1; row <= 2*n-1; row++)
+            { 
+                int nopattern=row;
+                if (row >n)
+                {
+                    nopattern=2*n-row;
+                }
+                for (int col = 1; col <= nopattern; col++)
+                {
+                    no = no + 1;
+                    if (no >= 0 && no <= 9)
+                    {
+                        temp += "0" + no + " ";
+                    }
+                    else
+                    {
+                        temp += no + " ";
+                    }
+                }
+                temp += "\n";
+            }
+            return temp;
+        }
+
+        public static string NoPatternG(int n)
+        {
+            string temp="";
+            int numeric = 0;
+            for (int row = 1; row <= n; row++)
+            {
+                numeric = n - (row - 1);
+                for (int col = row; col <= n; col++)
+                {
+                    temp += numeric + " ";
+                    numeric--;
                 }
                 temp += "\n";
             }
